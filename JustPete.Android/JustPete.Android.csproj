@@ -63,6 +63,10 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\AppCompatActivityExtensions.cs" />
+    <Compile Include="Infrastructure\ResultCallback.cs" />
+    <Compile Include="Infrastructure\MyCastListener.cs" />
+    <Compile Include="Infrastructure\MyMediaRouterCallback.cs" />
+    <Compile Include="Infrastructure\MyChannel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -87,5 +91,6 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Resources\menu\" />
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
 </Project>

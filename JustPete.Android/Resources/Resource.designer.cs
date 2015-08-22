@@ -2234,6 +2234,12 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f060003
 			public const int auth_google_play_services_client_google_display_name = 2131099651;
 			
+			// aapt resource value: 0x7f060043
+			public const int cast_app_id = 2131099715;
+			
+			// aapt resource value: 0x7f060044
+			public const int cast_namespace = 2131099716;
+			
 			// aapt resource value: 0x7f060001
 			public const int cast_notification_connected_message = 2131099649;
 			
