@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="googlecastios">
+  <name>Google Cast</name>
+  <publisher>Xamarin Inc</publisher>
+  <publisher-url>https://xamarin.com</publisher-url>
+  <src-url>https://developers.google.com/cast/docs/ios_sender</src-url>
+  <version>2.6.1</version>
+  <summary>Casting your content to the Big Screen using your iOS device.</summary>
+  <samples>
+    <sample id="GoogleCastiOSSample-Classic">
+      <name>Google Cast Classic Sample</name>
+      <summary>Google Cast Classic Sample</summary>
+    </sample>
+    <sample id="GoogleCastiOSSample">
+      <name>Google Cast Unified Sample</name>
+      <summary>Google Cast Unified Sample</summary>
+    </sample>
+  </samples>
+</component>
