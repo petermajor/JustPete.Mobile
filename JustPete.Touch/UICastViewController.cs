@@ -34,12 +34,22 @@ namespace JustPete.Touch
 
 			NavigationItem.RightBarButtonItems = new UIBarButtonItem[0];
 
-			CreateButtons ();
+			Setup ();
+
+			CreateCastButton ();
 
 			StartScanning ();
 		}
 
-		void CreateButtons ()
+		void Setup()
+		{
+			buttonJoin.TouchUpInside += (sender, e) => {
+				if (!string.IsNullOrWhiteSpace(textName.Text))
+					_channel.Join(textName.Text.Trim());
+			};
+		}
+
+		void CreateCastButton ()
 		{
 			_googleCastButton = new UIBarButtonItem (
 				UIImage.FromFile ("icon-cast-identified.png"),
@@ -65,6 +75,8 @@ namespace JustPete.Touch
 			{
 				NavigationItem.RightBarButtonItems = new UIBarButtonItem[0];
 			}
+
+			buttonJoin.Enabled = _channel != null && _channel.IsConnected;
 		}
 
 		void StartScanning ()
@@ -173,19 +185,12 @@ namespace JustPete.Touch
 
 			_deviceManager.AddChannel (_channel);
 
-			SendMessage ("Test test");
+			UpdateButtonStates ();
 		}
 
 		void DidReceiveTextMessage(string message)
 		{
 			Console.WriteLine ("DidReceiveTextMessage: {0}", message);
-		}
-
-		void SendMessage(string message)
-		{
-			if (_deviceManager != null && _deviceManager.ConnectionState == GCKConnectionState.Connected) {
-				_channel.SendTextMessage (message);
-			}
 		}
 	}
 }

@@ -110,5 +110,12 @@
     <BundleResource Include="Resources\icon-cast-identified%402x.png" />
     <BundleResource Include="Resources\icon-cast-identified%403x.png" />
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JustPete.Core\JustPete.Core.csproj">
+      <Project>{D2C86BAC-3266-4A94-B768-FB82A262E5D7}</Project>
+      <Name>JustPete.Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

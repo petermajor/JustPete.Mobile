@@ -93,4 +93,10 @@
     <Folder Include="Resources\menu\" />
     <Folder Include="Infrastructure\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JustPete.Core\JustPete.Core.csproj">
+      <Project>{D2C86BAC-3266-4A94-B768-FB82A262E5D7}</Project>
+      <Name>JustPete.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

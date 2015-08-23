@@ -3,5 +3,4 @@
 	<string name="app_name">Just Pete</string>
 	<string name="media_route_menu_title">Play on&#8230;</string>
 	<string name="cast_app_id">A487EF70</string>
-	<string name="cast_namespace">urn:x-cast:com.petermajor.justpete</string>
 </resources>

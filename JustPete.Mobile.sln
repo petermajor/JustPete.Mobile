@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustPete.Android", "JustPet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustPete.Touch", "JustPete.Touch\JustPete.Touch.csproj", "{3200FC5B-A485-4052-978C-B54FBC362781}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustPete.Core", "JustPete.Core\JustPete.Core.csproj", "{D2C86BAC-3266-4A94-B768-FB82A262E5D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,18 @@ Global
 		{C84EDD69-84AE-4470-9646-D649E4C74B0B}.Release|iPhone.Build.0 = Release|Any CPU
 		{C84EDD69-84AE-4470-9646-D649E4C74B0B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{C84EDD69-84AE-4470-9646-D649E4C74B0B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Release|iPhone.Build.0 = Release|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{D2C86BAC-3266-4A94-B768-FB82A262E5D7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

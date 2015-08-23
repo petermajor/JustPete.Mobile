@@ -1639,8 +1639,8 @@ namespace JustPete.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050061
-			public const int action0 = 2131034209;
+			// aapt resource value: 0x7f050063
+			public const int action0 = 2131034211;
 			
 			// aapt resource value: 0x7f050043
 			public const int action_bar = 2131034179;
@@ -1666,8 +1666,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050044
 			public const int action_context_bar = 2131034180;
 			
-			// aapt resource value: 0x7f050065
-			public const int action_divider = 2131034213;
+			// aapt resource value: 0x7f050067
+			public const int action_divider = 2131034215;
 			
 			// aapt resource value: 0x7f050003
 			public const int action_menu_divider = 2131034115;
@@ -1699,20 +1699,23 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050019
 			public const int always = 2131034137;
 			
-			// aapt resource value: 0x7f050058
-			public const int art = 2131034200;
+			// aapt resource value: 0x7f05005a
+			public const int art = 2131034202;
 			
 			// aapt resource value: 0x7f050016
 			public const int beginning = 2131034134;
 			
+			// aapt resource value: 0x7f050053
+			public const int buttonJoin = 2131034195;
+			
 			// aapt resource value: 0x7f050039
 			public const int buttonPanel = 2131034169;
 			
-			// aapt resource value: 0x7f05005e
-			public const int buttons = 2131034206;
+			// aapt resource value: 0x7f050060
+			public const int buttons = 2131034208;
 			
-			// aapt resource value: 0x7f050062
-			public const int cancel_action = 2131034210;
+			// aapt resource value: 0x7f050064
+			public const int cancel_action = 2131034212;
 			
 			// aapt resource value: 0x7f050000
 			public const int cast_notification_id = 2131034112;
@@ -1720,8 +1723,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f05003b
 			public const int checkbox = 2131034171;
 			
-			// aapt resource value: 0x7f050068
-			public const int chronometer = 2131034216;
+			// aapt resource value: 0x7f05006a
+			public const int chronometer = 2131034218;
 			
 			// aapt resource value: 0x7f05001a
 			public const int collapseActionView = 2131034138;
@@ -1741,8 +1744,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f05002c
 			public const int default_activity_button = 2131034156;
 			
-			// aapt resource value: 0x7f050057
-			public const int default_control_frame = 2131034199;
+			// aapt resource value: 0x7f050059
+			public const int default_control_frame = 2131034201;
 			
 			// aapt resource value: 0x7f05001e
 			public const int dialog = 2131034142;
@@ -1750,8 +1753,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050010
 			public const int disableHome = 2131034128;
 			
-			// aapt resource value: 0x7f05005f
-			public const int disconnect = 2131034207;
+			// aapt resource value: 0x7f050061
+			public const int disconnect = 2131034209;
 			
 			// aapt resource value: 0x7f05001f
 			public const int dropdown = 2131034143;
@@ -1762,8 +1765,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050017
 			public const int end = 2131034135;
 			
-			// aapt resource value: 0x7f05006d
-			public const int end_padder = 2131034221;
+			// aapt resource value: 0x7f05006f
+			public const int end_padder = 2131034223;
 			
 			// aapt resource value: 0x7f05002a
 			public const int expand_activities_button = 2131034154;
@@ -1786,14 +1789,14 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f05002b
 			public const int image = 2131034155;
 			
+			// aapt resource value: 0x7f05006e
+			public const int info = 2131034222;
+			
+			// aapt resource value: 0x7f050068
+			public const int line1 = 2131034216;
+			
 			// aapt resource value: 0x7f05006c
-			public const int info = 2131034220;
-			
-			// aapt resource value: 0x7f050066
-			public const int line1 = 2131034214;
-			
-			// aapt resource value: 0x7f05006a
-			public const int line3 = 2131034218;
+			public const int line3 = 2131034220;
 			
 			// aapt resource value: 0x7f05000d
 			public const int listMode = 2131034125;
@@ -1801,23 +1804,23 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f05002d
 			public const int list_item = 2131034157;
 			
-			// aapt resource value: 0x7f050064
-			public const int media_actions = 2131034212;
+			// aapt resource value: 0x7f050066
+			public const int media_actions = 2131034214;
 			
-			// aapt resource value: 0x7f050056
-			public const int media_route_control_frame = 2131034198;
+			// aapt resource value: 0x7f050058
+			public const int media_route_control_frame = 2131034200;
 			
-			// aapt resource value: 0x7f050052
-			public const int media_route_list = 2131034194;
+			// aapt resource value: 0x7f050054
+			public const int media_route_list = 2131034196;
 			
-			// aapt resource value: 0x7f05006f
-			public const int media_route_menu_item = 2131034223;
+			// aapt resource value: 0x7f050071
+			public const int media_route_menu_item = 2131034225;
 			
-			// aapt resource value: 0x7f05005c
-			public const int media_route_volume_layout = 2131034204;
+			// aapt resource value: 0x7f05005e
+			public const int media_route_volume_layout = 2131034206;
 			
-			// aapt resource value: 0x7f05005d
-			public const int media_route_volume_slider = 2131034205;
+			// aapt resource value: 0x7f05005f
+			public const int media_route_volume_slider = 2131034207;
 			
 			// aapt resource value: 0x7f050018
 			public const int middle = 2131034136;
@@ -1837,8 +1840,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050030
 			public const int parentPanel = 2131034160;
 			
-			// aapt resource value: 0x7f050059
-			public const int play_pause = 2131034201;
+			// aapt resource value: 0x7f05005b
+			public const int play_pause = 2131034203;
 			
 			// aapt resource value: 0x7f050006
 			public const int progress_circular = 2131034118;
@@ -1849,8 +1852,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f05003d
 			public const int radio = 2131034173;
 			
-			// aapt resource value: 0x7f050054
-			public const int route_name = 2131034196;
+			// aapt resource value: 0x7f050056
+			public const int route_name = 2131034198;
 			
 			// aapt resource value: 0x7f050022
 			public const int screen = 2131034146;
@@ -1891,8 +1894,8 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050051
 			public const int select_dialog_listview = 2131034193;
 			
-			// aapt resource value: 0x7f050055
-			public const int settings = 2131034197;
+			// aapt resource value: 0x7f050057
+			public const int settings = 2131034199;
 			
 			// aapt resource value: 0x7f05003c
 			public const int shortcut = 2131034172;
@@ -1918,47 +1921,50 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f050025
 			public const int src_over = 2131034149;
 			
-			// aapt resource value: 0x7f050063
-			public const int status_bar_latest_event_content = 2131034211;
+			// aapt resource value: 0x7f050065
+			public const int status_bar_latest_event_content = 2131034213;
 			
-			// aapt resource value: 0x7f050060
-			public const int stop = 2131034208;
+			// aapt resource value: 0x7f050062
+			public const int stop = 2131034210;
 			
 			// aapt resource value: 0x7f05004e
 			public const int submit_area = 2131034190;
 			
-			// aapt resource value: 0x7f05005b
-			public const int subtitle = 2131034203;
+			// aapt resource value: 0x7f05005d
+			public const int subtitle = 2131034205;
 			
 			// aapt resource value: 0x7f05000f
 			public const int tabMode = 2131034127;
 			
-			// aapt resource value: 0x7f05006b
-			public const int text = 2131034219;
+			// aapt resource value: 0x7f05006d
+			public const int text = 2131034221;
 			
-			// aapt resource value: 0x7f050069
-			public const int text2 = 2131034217;
+			// aapt resource value: 0x7f05006b
+			public const int text2 = 2131034219;
+			
+			// aapt resource value: 0x7f050052
+			public const int textName = 2131034194;
 			
 			// aapt resource value: 0x7f050036
 			public const int textSpacerNoButtons = 2131034166;
 			
-			// aapt resource value: 0x7f05005a
-			public const int text_wrapper = 2131034202;
+			// aapt resource value: 0x7f05005c
+			public const int text_wrapper = 2131034204;
 			
-			// aapt resource value: 0x7f050067
-			public const int time = 2131034215;
+			// aapt resource value: 0x7f050069
+			public const int time = 2131034217;
 			
 			// aapt resource value: 0x7f05002f
 			public const int title = 2131034159;
 			
-			// aapt resource value: 0x7f050053
-			public const int title_bar = 2131034195;
+			// aapt resource value: 0x7f050055
+			public const int title_bar = 2131034197;
 			
 			// aapt resource value: 0x7f050032
 			public const int title_template = 2131034162;
 			
-			// aapt resource value: 0x7f05006e
-			public const int toolbar = 2131034222;
+			// aapt resource value: 0x7f050070
+			public const int toolbar = 2131034224;
 			
 			// aapt resource value: 0x7f050031
 			public const int topPanel = 2131034161;
@@ -2236,9 +2242,6 @@ namespace JustPete.Android
 			
 			// aapt resource value: 0x7f060043
 			public const int cast_app_id = 2131099715;
-			
-			// aapt resource value: 0x7f060044
-			public const int cast_namespace = 2131099716;
 			
 			// aapt resource value: 0x7f060001
 			public const int cast_notification_connected_message = 2131099649;

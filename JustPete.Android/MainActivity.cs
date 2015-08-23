@@ -12,6 +12,7 @@ using JustPete.Android.Extensions;
 using JustPete.Android.Infrastructure;
 using MediaRouteActionProvider = Android.Support.V7.App.MediaRouteActionProvider;
 using ResultCallback = JustPete.Android.Infrastructure.ResultCallback<Android.Gms.Cast.CastClass.IApplicationConnectionResult>;
+using Android.Widget;
  
 namespace JustPete.Android
 {
@@ -19,6 +20,10 @@ namespace JustPete.Android
 	public class MainActivity : AppCompatActivity, IGoogleApiClientConnectionCallbacks, IGoogleApiClientOnConnectionFailedListener
 	{
 		public const int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
+
+		EditText _textName;
+
+		Button _buttonJoin;
 
 		MediaRouter _mediaRouter;
 
@@ -33,8 +38,6 @@ namespace JustPete.Android
 		MyChannel _channel;
 
 		bool _applicationStarted;
-
-		string _sessionId;
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
@@ -54,6 +57,19 @@ namespace JustPete.Android
 			{
 				RouteSelected = OnRouteSelected,
 				RouteUnselected = OnRouteUnselected
+			};
+
+			Setup ();
+		}
+
+		void Setup()
+		{
+			_textName = FindViewById<EditText> (Resource.Id.textName);
+
+			_buttonJoin = FindViewById<Button> (Resource.Id.buttonJoin);
+			_buttonJoin.Click += (sender, e) => {
+				if (!string.IsNullOrWhiteSpace(_textName.Text))
+					_channel.Join(_textName.Text.Trim());
 			};
 		}
 
@@ -140,12 +156,12 @@ namespace JustPete.Android
 					{
 						try
 						{
-							CastClass.CastApi.StopApplication(_apiClient, _sessionId);
+							CastClass.CastApi.LeaveApplication(_apiClient);
 							if (_channel != null)
 							{
 								CastClass.CastApi.RemoveMessageReceivedCallbacks(
 									_apiClient,
-									GetChannelNamespace());
+									MyChannel.CastNamespace);
 								_channel = null;
 							}
 						}
@@ -165,7 +181,6 @@ namespace JustPete.Android
 				_mediaRouter.SelectRoute(_mediaRouter.DefaultRoute);
 			}
 			_selectedDevice = null;
-			_sessionId = null;
 		}
 
 		public void OnConnected (Bundle connectionHint)
@@ -184,34 +199,28 @@ namespace JustPete.Android
 			Console.WriteLine("ApplicationConnectionResultCallback - {0}", result.Status.StatusCode);
 			if (result.Status.IsSuccess)
 			{
-				_sessionId = result.SessionId;
-
 				Console.WriteLine("application name: {0}, status: {1}, sessionId: {2}, wasLaunched: {3}",
 					result.ApplicationMetadata.Name,
 					result.ApplicationStatus,
-					_sessionId,
+					result.SessionId,
 					result.WasLaunched);
 				
 				_applicationStarted = true;
 
 				// Create the custom message
 				// channel
-				_channel = new MyChannel { MessageReceived = OnMessageReceived };
+				_channel = new MyChannel(_apiClient) { MessageReceived = OnMessageReceived };
 					
 				try {
 					CastClass.CastApi.SetMessageReceivedCallbacks(
 						_apiClient,
-						GetChannelNamespace(),
+						MyChannel.CastNamespace,
 						_channel);
 				}
 				catch (Exception e)
 				{
 					Console.WriteLine ("Exception while creating channel - {0}", e);
 				}
-
-				// set the initial instructions
-				// on the receiver
-				SendMessage("Test Test");
 			}
 			else
 			{
@@ -228,7 +237,7 @@ namespace JustPete.Android
 				{
 					var pendingResult = CastClass.CastApi.SendMessage(
 						_apiClient,
-						GetChannelNamespace(),
+						MyChannel.CastNamespace,
 						message);
 						
 //					.setResultCallback(
@@ -267,11 +276,6 @@ namespace JustPete.Android
 		string GetAppId()
 		{
 			return Resources.GetString (Resource.String.cast_app_id);
-		}
-
-		string GetChannelNamespace()
-		{
-			return Resources.GetString (Resource.String.cast_namespace);
 		}
 	}
 }
