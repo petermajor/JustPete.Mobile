@@ -2240,6 +2240,9 @@ namespace JustPete.Android
 			// aapt resource value: 0x7f060003
 			public const int auth_google_play_services_client_google_display_name = 2131099651;
 			
+			// aapt resource value: 0x7f060045
+			public const int button_join = 2131099717;
+			
 			// aapt resource value: 0x7f060043
 			public const int cast_app_id = 2131099715;
 			
@@ -2347,6 +2350,9 @@ namespace JustPete.Android
 			
 			// aapt resource value: 0x7f060020
 			public const int common_signin_button_text_long = 2131099680;
+			
+			// aapt resource value: 0x7f060044
+			public const int hint_name = 2131099716;
 			
 			// aapt resource value: 0x7f060042
 			public const int media_route_menu_title = 2131099714;

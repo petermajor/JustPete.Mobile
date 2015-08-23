@@ -8,9 +8,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textName" />
+        android:id="@+id/textName"
+        android:hint="@string/hint_name" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonJoin" />
+        android:id="@+id/buttonJoin"
+        android:text="@string/button_join" />
 </LinearLayout>
