@@ -89,10 +89,12 @@
     </Compile>
     <Compile Include="Infrastructure\DeviceManagerDelegate.cs" />
     <Compile Include="Infrastructure\DeviceScannerListener.cs" />
+    <Compile Include="Infrastructure\MyChannel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Infrastructure\" />
+    <Folder Include="Resources\Base.lproj\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googlecastios">
@@ -107,5 +109,6 @@
     <BundleResource Include="Resources\icon-cast-identified.png" />
     <BundleResource Include="Resources\icon-cast-identified%402x.png" />
     <BundleResource Include="Resources\icon-cast-identified%403x.png" />
+    <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
   </ItemGroup>
 </Project>

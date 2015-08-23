@@ -13,7 +13,7 @@ namespace JustPete.Touch.Infrastructure
 		[Export ("deviceManagerDidConnect:")]
 		public void DidConnect (GCKDeviceManager deviceManager)
 		{
-			Console.WriteLine ("connected!!");
+			Console.WriteLine ("Connected");
 
 			var onDidConnect = OnDidConnect;
 			if (onDidConnect != null)
