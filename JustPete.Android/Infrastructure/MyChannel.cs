@@ -3,7 +3,7 @@ using Android.Gms.Cast;
 using JustPete.Core.Messages;
 using Android.Gms.Common.Apis;
 using JustPete.Core;
- 
+
 namespace JustPete.Android.Infrastructure
 {
 	public class MyChannel : Java.Lang.Object, CastClass.IMessageReceivedCallback
@@ -26,12 +26,20 @@ namespace JustPete.Android.Infrastructure
 				messageReceived (castDevice, nameSpace, message);
 		}
 
-
 		public void Join(string name)
 		{
 			Console.WriteLine ("Join as '{0}'", name);
 
 			var message = new JoinMessage { Name = name };
+
+			SendMessage (message.ToJson());
+		}
+
+		public void Guess(int value)
+		{
+			Console.WriteLine ("Guess number '{0}'", value);
+
+			var message = new GuessMessage { Value = value };
 
 			SendMessage (message.ToJson());
 		}

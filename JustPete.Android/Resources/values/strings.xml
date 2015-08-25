@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Just Pete</string>
-	<string name="media_route_menu_title">Play on&#8230;</string>
-	<string name="cast_app_id">A487EF70</string>
-	<string name="hint_name">Name</string>
+	<string name="button_guess">Guess</string>
 	<string name="button_join">Join</string>
+	<string name="cast_app_id">A487EF70</string>
+	<string name="hint_guess">Number</string>
+	<string name="hint_name">Name</string>
+	<string name="media_route_menu_title">Play on&#8230;</string>
 </resources>

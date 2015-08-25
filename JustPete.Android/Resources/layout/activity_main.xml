@@ -5,14 +5,57 @@
     android:orientation="vertical">
     <include
         layout="@layout/toolbar" />
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textName"
-        android:hint="@string/hint_name" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonJoin"
-        android:text="@string/button_join" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/view_margin_bottom"
+            android:id="@+id/promptCast"
+            android:text="Step 1\nTap the Chromecast button on the toolbar" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/promptJoin"
+            android:text="Step 2\nType your name and tap 'Join'" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textName"
+            android:hint="@string/hint_name"
+            android:singleLine="true"
+            android:inputType="textCapSentences"
+            android:imeOptions="actionGo" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/view_margin_bottom"
+            android:id="@+id/buttonJoin"
+            android:text="@string/button_join" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/promptGuess"
+            android:text="Step 3\nGuess a number between 0 and 999\nYou can guess as many times as you want" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textGuess"
+            android:hint="@string/hint_guess"
+            android:inputType="number"
+            android:singleLine="true"
+            android:imeOptions="actionGo" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/view_margin_bottom"
+            android:id="@+id/buttonGuess"
+            android:text="@string/button_guess" />
+    </LinearLayout>
 </LinearLayout>

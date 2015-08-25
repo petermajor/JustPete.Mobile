@@ -1,8 +1,8 @@
-﻿using GoogleCast;
+﻿using System;
+using Foundation;
+using GoogleCast;
 using JustPete.Touch.Infrastructure;
 using UIKit;
-using System;
-using Foundation;
 
 namespace JustPete.Touch
 {
@@ -21,6 +21,10 @@ namespace JustPete.Touch
 		GCKDevice _selectedDevice;
 
 		MyChannel _channel;
+
+		bool _applicationStarted;
+
+		bool _hasJoined;
 
 		public UICastViewController () : base ("UICastViewController", null)
 		{
@@ -43,10 +47,39 @@ namespace JustPete.Touch
 
 		void Setup()
 		{
-			buttonJoin.TouchUpInside += (sender, e) => {
-				if (!string.IsNullOrWhiteSpace(textName.Text))
-					_channel.Join(textName.Text.Trim());
+			textGuess.ReturnKeyType = UIReturnKeyType.Go;
+			textName.ShouldReturn += textField => {
+				OnJoin ();
+				return true;
 			};
+
+			buttonJoin.TouchUpInside += (sender, e) => OnJoin();
+
+			buttonGuess.TouchUpInside += (sender, e) => {
+				if (string.IsNullOrWhiteSpace(textGuess.Text))
+					return;
+
+				int val;
+				if (int.TryParse(textGuess.Text.Trim(), out val))
+					_channel.Guess(val);
+
+				textGuess.Text = string.Empty;
+				//textGuess.SelectedTextRange = textGuess.GetTextRange(textGuess.BeginningOfDocument, textGuess.EndOfDocument);
+			};
+
+			UpdateButtonStates ();
+		}
+
+		void OnJoin()
+		{
+			if (string.IsNullOrWhiteSpace(textName.Text))
+				return;
+
+			_channel.Join(textName.Text.Trim());
+			_hasJoined = true;
+			UpdateButtonStates();
+
+			textGuess.BecomeFirstResponder();
 		}
 
 		void CreateCastButton ()
@@ -76,7 +109,17 @@ namespace JustPete.Touch
 				NavigationItem.RightBarButtonItems = new UIBarButtonItem[0];
 			}
 
-			buttonJoin.Enabled = _channel != null && _channel.IsConnected;
+			promptCast.Enabled = !_applicationStarted;
+
+			promptJoin.Enabled = _applicationStarted && !_hasJoined;
+			textName.Enabled = promptJoin.Enabled;
+			//textName.Hint = _textName.Enabled ? "Name" : string.Empty;
+			buttonJoin.Enabled = promptJoin.Enabled;
+
+			promptGuess.Enabled = _applicationStarted && _hasJoined;
+			textGuess.Enabled = promptGuess.Enabled;
+			//textGuess.Hint = _textGuess.Enabled ? "Guess" : string.Empty;
+			buttonGuess.Enabled = promptGuess.Enabled;
 		}
 
 		void StartScanning ()
@@ -141,6 +184,9 @@ namespace JustPete.Touch
 
 		void DeviceDisconnected()
 		{
+			_applicationStarted = false;
+			_hasJoined = false;
+
 			_channel.Dispose ();
 			_channel = null;
 
@@ -185,7 +231,11 @@ namespace JustPete.Touch
 
 			_deviceManager.AddChannel (_channel);
 
+			_applicationStarted = true;
+
 			UpdateButtonStates ();
+
+			textName.BecomeFirstResponder ();
 		}
 
 		void DidReceiveTextMessage(string message)

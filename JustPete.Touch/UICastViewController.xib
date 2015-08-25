@@ -6,8 +6,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UICastViewController">
             <connections>
-                <outlet property="buttonJoin" destination="aMg-8Y-i9D" id="jLK-tb-cyT"/>
-                <outlet property="textName" destination="U25-SX-4oh" id="Ewi-uY-FBI"/>
+                <outlet property="buttonGuess" destination="1HS-BY-dT8" id="sO1-bG-9kD"/>
+                <outlet property="buttonJoin" destination="aMg-8Y-i9D" id="Hkj-hj-sme"/>
+                <outlet property="promptCast" destination="T6u-Xj-d22" id="Or3-KX-Nfn"/>
+                <outlet property="promptGuess" destination="2gj-CR-qwa" id="MrU-UM-1BT"/>
+                <outlet property="promptJoin" destination="e84-O9-85D" id="ah4-5g-FEf"/>
+                <outlet property="textGuess" destination="VA8-3m-ps5" id="QwH-rz-ajt"/>
+                <outlet property="textName" destination="U25-SX-4oh" id="tDG-YR-7E6"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
             </connections>
         </placeholder>
@@ -16,20 +21,79 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U25-SX-4oh">
-                    <rect key="frame" x="21" y="101" width="265" height="30"/>
-                    <accessibility key="accessibilityConfiguration" hint=""/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6u-Xj-d22">
+                    <rect key="frame" x="20" y="84" width="280" height="33.5"/>
+                    <string key="text">Step 1
+Tap the Chromecast button on the toolbar</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMg-8Y-i9D">
-                    <rect key="frame" x="21" y="139" width="30" height="30"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e84-O9-85D">
+                    <rect key="frame" x="20" y="137" width="280" height="33.5"/>
+                    <string key="text">Step 2
+Type your name and tap 'Join'</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gj-CR-qwa">
+                    <rect key="frame" x="20" y="264.5" width="280" height="50.5"/>
+                    <string key="text">Step 3
+Guess a number between 0 and 999
+You can guess as many times as you want</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMg-8Y-i9D">
+                    <rect key="frame" x="20" y="214.5" width="30" height="30"/>
                     <state key="normal" title="Join">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VA8-3m-ps5">
+                    <rect key="frame" x="20" y="324.5" width="280" height="30"/>
+                    <accessibility key="accessibilityConfiguration" hint=""/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-BY-dT8">
+                    <rect key="frame" x="20" y="358.5" width="44" height="30"/>
+                    <state key="normal" title="Guess">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U25-SX-4oh">
+                    <rect key="frame" x="20" y="180" width="280" height="30"/>
+                    <accessibility key="accessibilityConfiguration" hint=""/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="join"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="T6u-Xj-d22" firstAttribute="trailing" secondItem="e84-O9-85D" secondAttribute="trailing" id="8H6-Pt-5OI"/>
+                <constraint firstItem="e84-O9-85D" firstAttribute="leading" secondItem="U25-SX-4oh" secondAttribute="leading" id="8Nw-Dp-07A"/>
+                <constraint firstItem="2gj-CR-qwa" firstAttribute="top" secondItem="aMg-8Y-i9D" secondAttribute="bottom" constant="20" id="HLV-jo-HCm"/>
+                <constraint firstItem="VA8-3m-ps5" firstAttribute="trailing" secondItem="2gj-CR-qwa" secondAttribute="trailing" id="Ilp-Z2-jHj"/>
+                <constraint firstItem="T6u-Xj-d22" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="84" id="JuU-Ja-PaI"/>
+                <constraint firstItem="aMg-8Y-i9D" firstAttribute="top" secondItem="U25-SX-4oh" secondAttribute="bottom" constant="4" id="RkL-CC-cMx"/>
+                <constraint firstItem="2gj-CR-qwa" firstAttribute="trailing" secondItem="e84-O9-85D" secondAttribute="trailing" id="TnQ-jO-Ycj"/>
+                <constraint firstItem="VA8-3m-ps5" firstAttribute="leading" secondItem="1HS-BY-dT8" secondAttribute="leading" id="Wa5-I7-3lB"/>
+                <constraint firstItem="aMg-8Y-i9D" firstAttribute="leading" secondItem="U25-SX-4oh" secondAttribute="leading" id="X0e-ne-NZT"/>
+                <constraint firstItem="e84-O9-85D" firstAttribute="top" secondItem="T6u-Xj-d22" secondAttribute="bottom" constant="20" id="YRA-9F-It2"/>
+                <constraint firstItem="2gj-CR-qwa" firstAttribute="leading" secondItem="e84-O9-85D" secondAttribute="leading" id="awu-rt-3zV"/>
+                <constraint firstItem="VA8-3m-ps5" firstAttribute="leading" secondItem="2gj-CR-qwa" secondAttribute="leading" id="faL-tY-Qkc"/>
+                <constraint firstItem="U25-SX-4oh" firstAttribute="top" secondItem="e84-O9-85D" secondAttribute="bottom" constant="10" id="hEX-7R-l7d"/>
+                <constraint firstAttribute="trailing" secondItem="T6u-Xj-d22" secondAttribute="trailing" constant="20" id="j6w-iy-cjo"/>
+                <constraint firstItem="e84-O9-85D" firstAttribute="trailing" secondItem="U25-SX-4oh" secondAttribute="trailing" id="l6R-1k-KaG"/>
+                <constraint firstItem="T6u-Xj-d22" firstAttribute="leading" secondItem="e84-O9-85D" secondAttribute="leading" id="nl6-zJ-Wzr"/>
+                <constraint firstItem="1HS-BY-dT8" firstAttribute="top" secondItem="VA8-3m-ps5" secondAttribute="bottom" constant="4" id="oD3-bI-i7w"/>
+                <constraint firstItem="T6u-Xj-d22" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="vfs-id-Xs5"/>
+                <constraint firstItem="VA8-3m-ps5" firstAttribute="top" secondItem="2gj-CR-qwa" secondAttribute="bottom" constant="10" id="yTz-QF-8aC"/>
+            </constraints>
+            <point key="canvasLocation" x="411.5" y="375"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -8,11 +8,11 @@ using Android.Support.V4.View;
 using Android.Support.V7.App;
 using Android.Support.V7.Media;
 using Android.Views;
+using Android.Widget;
 using JustPete.Android.Extensions;
 using JustPete.Android.Infrastructure;
 using MediaRouteActionProvider = Android.Support.V7.App.MediaRouteActionProvider;
 using ResultCallback = JustPete.Android.Infrastructure.ResultCallback<Android.Gms.Cast.CastClass.IApplicationConnectionResult>;
-using Android.Widget;
  
 namespace JustPete.Android
 {
@@ -21,23 +21,23 @@ namespace JustPete.Android
 	{
 		public const int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
 
+		TextView _promptCast;
+		TextView _promptJoin;
+		TextView _promptGuess;
 		EditText _textName;
-
+		EditText _textGuess;
 		Button _buttonJoin;
+		Button _buttonGuess;
 
 		MediaRouter _mediaRouter;
-
 		MediaRouteSelector _mediaRouteSelector;
-
 		CastDevice _selectedDevice;
-
 		MyMediaRouterCallback _mediaRouterCallback;
-
 		IGoogleApiClient _apiClient;
-
 		MyChannel _channel;
 
 		bool _applicationStarted;
+		bool _hasJoined;
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
@@ -62,15 +62,63 @@ namespace JustPete.Android
 			Setup ();
 		}
 
+		void SubmitJoin()
+		{
+			if (string.IsNullOrWhiteSpace(_textName.Text))
+				return;
+
+			_channel.Join(_textName.Text.Trim());
+			_hasJoined = true;
+			UpdateEnabledStates();
+			_textGuess.RequestFocus();
+		}
+
+		void SubmitGuess()
+		{
+			if (string.IsNullOrWhiteSpace(_textGuess.Text))
+				return;
+
+			int val;
+			if (int.TryParse(_textGuess.Text.Trim(), out val))
+				_channel.Guess(val);
+
+			_textGuess.SelectAll();
+		}
+
+		void UpdateEnabledStates()
+		{
+			_promptCast.Enabled = !_applicationStarted;
+
+			_promptJoin.Enabled = _applicationStarted && !_hasJoined;
+			_textName.Enabled = _promptJoin.Enabled;
+			_textName.Hint = _textName.Enabled ? "Name" : string.Empty;
+			_buttonJoin.Enabled = _promptJoin.Enabled;
+
+			_promptGuess.Enabled = _applicationStarted && _hasJoined;
+			_textGuess.Enabled = _promptGuess.Enabled;
+			_textGuess.Hint = _textGuess.Enabled ? "Guess" : string.Empty;
+			_buttonGuess.Enabled = _promptGuess.Enabled;
+		}
+
 		void Setup()
 		{
+			_promptCast = FindViewById<TextView> (Resource.Id.promptCast);
+			_promptJoin = FindViewById<TextView> (Resource.Id.promptJoin);
+			_promptGuess = FindViewById<TextView> (Resource.Id.promptGuess);
+
 			_textName = FindViewById<EditText> (Resource.Id.textName);
+			_textName.EditorAction += (sender, e) => SubmitJoin();
+
+			_textGuess = FindViewById<EditText> (Resource.Id.textGuess);
+			_textGuess.EditorAction += (sender, e) => SubmitGuess();
 
 			_buttonJoin = FindViewById<Button> (Resource.Id.buttonJoin);
-			_buttonJoin.Click += (sender, e) => {
-				if (!string.IsNullOrWhiteSpace(_textName.Text))
-					_channel.Join(_textName.Text.Trim());
-			};
+			_buttonJoin.Click += (sender, e) => SubmitJoin();
+
+			_buttonGuess = FindViewById<Button> (Resource.Id.buttonGuess);
+			_buttonGuess.Click += (sender, e) => SubmitGuess();
+
+			UpdateEnabledStates ();
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)
@@ -152,6 +200,8 @@ namespace JustPete.Android
 			{
 				if (_applicationStarted)
 				{
+					_applicationStarted = false;
+					_hasJoined = false;
 					if (_apiClient.IsConnected || _apiClient.IsConnecting)
 					{
 						try
@@ -171,7 +221,6 @@ namespace JustPete.Android
 						}
 						_apiClient.Disconnect();
 					}
-					_applicationStarted = false;
 				}
 				_apiClient = null;
 			}
@@ -181,6 +230,9 @@ namespace JustPete.Android
 				_mediaRouter.SelectRoute(_mediaRouter.DefaultRoute);
 			}
 			_selectedDevice = null;
+
+			_textGuess.Text = string.Empty;
+			UpdateEnabledStates ();
 		}
 
 		public void OnConnected (Bundle connectionHint)
@@ -221,6 +273,9 @@ namespace JustPete.Android
 				{
 					Console.WriteLine ("Exception while creating channel - {0}", e);
 				}
+
+				UpdateEnabledStates();
+				_textName.RequestFocus ();
 			}
 			else
 			{
