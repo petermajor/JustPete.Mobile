@@ -118,6 +118,8 @@ namespace JustPete.Android
 			_buttonGuess = FindViewById<Button> (Resource.Id.buttonGuess);
 			_buttonGuess.Click += (sender, e) => SubmitGuess();
 
+			Window.SetSoftInputMode(SoftInput.StateHidden);
+
 			UpdateEnabledStates ();
 		}
 
